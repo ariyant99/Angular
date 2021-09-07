@@ -1,0 +1,16 @@
+<input 
+    type="text" 
+    class="form-control"
+    [(ngModel)] = "retValue" />
+<button 
+    class="btn btn-secondary"
+    style="margin: 20px;"
+    [disabled] = "retValue == ''"
+    (click) = "retValue = ''"
+    >
+    Reset Value
+</button>
+<h1 *ngIf="retValue != ''" 
+	[ngStyle]= "{color: getColor()}"
+	[ngClass] = "{textback : col === 'black'}">Input text is: </h1>
+<h2 style="color: orange;">{{ retValue }}</h2>
