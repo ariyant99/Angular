@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'new-app';
+  show = false;
+  log : any[] = [];
+
+  toggleData() {
+    this.show = !this.show;
+
+    //this.log.push(this.log.length + 1);
+    this.log.push(new Date);
+
+
+  }
 }
