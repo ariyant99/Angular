@@ -3,24 +3,26 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  styles: [`
-  	.textback {
-  		background: yellow;
-  	}
-  `]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'myApp';
-  retValue = "";
-  col = "black";
+  serverElements = [];
+  newServerName = '';
+  newServerContent = '';
 
-  constructor() {
-  	this.col = Math.random() > 0.5 ? 'black' : 'red';
+  onAddServer() {
+    this.serverElements.push({
+      type: 'server',
+      name: this.newServerName,
+      content: this.newServerContent
+    });
   }
 
-  getColor() {
-  	return this.col;
+  onAddBlueprint() {
+    this.serverElements.push({
+      type: 'blueprint',
+      name: this.newServerName,
+      content: this.newServerContent
+    });
   }
-  
 }
